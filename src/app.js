@@ -1,28 +1,27 @@
 import express from "express";
+import db from "./config/dbConexao.js";
+import RotasUsuario from "./routers/Routers.js";
 
+const port = 3000
 
 const app = express();
-const port = 3000
-// const DB_USER = 'jonatastalves'
-// const DB_PASSWORD = 'torres94'
-
-
-// // mongoose
-// //     .connect(
-//     //         `mongodb+srv://${DB_USER}:${DB_PASSWORD}@apicluster.piksf3s.mongodb.net/bancoapi?retryWrites=true&w=majority'`
-//     //         )
-//     //         .then(()=>{
-//         //             app.listen(port, ()=>{
-//             //                 console.log(`Servidor disponível em http://localhost:${port}, conectado ao mongoDB!`)
-//             //             });
-//             //         })
-//             //         .catch((err)=> console.log(err))
-            
-            
-            
 app.use(express.json());
+
+db.on("error", console.log.bind(console, "Houve um erro ao se conectar com o banco de dados"))
+db.once("open", ()=>{
+    console.log("Banco de dados conectado com sucesso")
+})
 
 app.get("/", (req, res) => {
     return res.status(200).json({ message: "Server Online" });
-  });
+});
 
+app.listen(port, ()=>{
+    console.log(`Servidor disponível em http://localhost:${port}, conectado ao mongoDB!`)
+});
+
+
+
+
+
+            
