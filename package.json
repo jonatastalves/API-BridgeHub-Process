@@ -1,0 +1,19 @@
+{
+  "name": "bridgehub",
+  "version": "1.0.0",
+  "description": "API para processo seletivo de back end jr",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/app.js",
+    "dev": "nodemon ./src/app.js"
+  },
+  "author": "Jonatas",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongoose": "^6.4.0",
+    "nodemon": "^2.0.16"
+  }
+}
