@@ -3,6 +3,7 @@ import Response from "../utils/Response.js"
 
 class usuarioController{
     static cadastrarUser(req, res){
+        // dando erro mas cadastra
         const usuario = new usuarios(req.body)
         usuario.save((erro)=>{
             if(erro){
@@ -36,24 +37,18 @@ class usuarioController{
     
     static atualizarUserID(req, res){
         const id = req.params.id
-        usuarios.findByIdAndUpdate(id, {$set: req.body}, {new: true}, (erro, usuario)=>{
-            if(erro){
-                res.status(500).send({Mensagem: Response[500], Erro: erro})
-            } else {
-                res.status(200).send({Mensagem: Response[200], Reusltado: usuario})
-            }
+        usuarios.findByIdAndUpdate(id, {$set: req.body}, {new: true}, (usuario)=>{
+            
+            res.status(200).send({Mensagem: Response[200], Resultado: usuario})
+            
         })
     }
     
     static excluirUserID(req, res){
         const id = req.params.id
-        usuarios.findByIdAndDelete(id, (erro)=> {
-         if(erro){
-             res.status(500).send({Mensagem: Response[500], Erro: erro})
-         } else {
-             res.status(200).send({Mensagem: Response[200]})
-         }
-     })
+        usuarios.findByIdAndDelete(id, (usuario)=> {
+            res.status(200).send({Mensagem: Response[200]})
+        })
     }
 }
 

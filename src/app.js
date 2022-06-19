@@ -20,6 +20,7 @@ app.listen(port, ()=>{
     console.log(`Servidor disponível em http://localhost:${port}, conectado ao mongoDB!`)
 });
 
+RotasUsuario.rotas(app);
 
 
 
