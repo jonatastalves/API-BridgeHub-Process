@@ -47,7 +47,7 @@ Você precisará instalar em seu PC: <br>
 
 Você usará como rota o link informado:
 
-https://api-tintas.herokuapp.com/tintas
+https://api-bridgehub.herokuapp.com/
 
 
 # Rota da API
