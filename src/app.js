@@ -2,7 +2,7 @@ import express from "express";
 import db from "./config/dbConexao.js";
 import RotasUsuario from "./routers/Routers.js";
 
-const port = 3000
+const port = process.env.PORT || 3000
 
 const app = express();
 app.use(express.json());
