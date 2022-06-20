@@ -54,58 +54,21 @@ https://api-tintas.herokuapp.com/tintas
 
 ## Endereço
 
-<b>[POST] </b> /tintas - A rota enviará os dados necessários para executar todo o cálculo através da lógica aplicada, caso seja bem sucedida retornará a resposta com a quantidade de latas necessárias através do status 200. <br>
+<b>[POST] </b> “/add_user/“ - A rota enviará os dados necessários para cadastrar o usuário, caso seja bem sucedida retornará a o mesmo através do status 201. <br>
+<b>[GET] </b> “/users/“ - Este Endpoint é responsável por listar os usuários cadastrados na plataforma com todos os seus dados <br>
+<b>[GET] </b> “/users/:id“ - Este Endpoint é responsável por listar um usuário específico cadastrado na plataforma através de seu id<br>
+<b>[PUT] </b> “/edit_user/:id“ - Este Endpoint é responsável por editar um usuário específico, através do ID, cadastrado na plataforma através, isto é, editar o nome e/ou e-mail e/ou telefone <br>
+<b>[DELETE] </b> “/delete_user/:id“ - Este Endpoint é responsável por deletar um usuário específico, através do ID, cadastrado na plataforma<br>
+
 
 ### Schema da requisição 
 
 ```javascript
-[
-  {
-    "altura": 3,
-    "largura": 2,
-    "numeroDePortas": 0,
-    "numeroDeJanelas": 1
-  },
-  {
-    "altura": 3,
-    "largura": 3,
-    "numeroDePortas": 0,
-    "numeroDeJanelas": 0
-  },
-  {
-    "altura": 3,
-    "largura": 2,
-    "numeroDePortas": 1,
-    "numeroDeJanelas": 0
-  },
-  {
-    "altura": 3,
-    "largura": 3,
-    "numeroDePortas": 0,
-    "numeroDeJanelas": 0
-  }
-]
-```
-<h4>Observações:</h4>
-Cada objeto acima representa 1 parede, informe a medida referente a altura, largura, e se a parede possui porta e janela insira o numero referente no campo descrito!
 
-### Schema da resposta 
-
-```javascript
 {
-	"QuantidadeLatasDe18L": "int",
-	"QuantidadeGaloes3_6L": "int",
-	"QuantidadeLatas2_5L": "int",
-	"QuantidadeLatas0_5": "int"
+    "nome": "Jonatas",
+    "email": "jonatas@emailqualquer.com",
+	"telefone": 2132323232
 }
-
-```
-
-# Rodando teste
-
-Para rodar os teste, utilizando o framework Jest basta rodar o comando abaixo:
-
-```
-npm test
 ```
 
