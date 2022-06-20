@@ -1,6 +1,7 @@
 import express from "express";
 import db from "./config/dbConexao.js";
 import RotasUsuario from "./routers/Routers.js";
+import 'dotenv/config'
 
 const port = process.env.PORT || 3000
 
