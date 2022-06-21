@@ -3,7 +3,7 @@ import Response from "../utils/Response.js"
 
 class usuarioController{
     static cadastrarUser(req, res){
-        // dando erro mas cadastra
+        
         const usuario = new usuarios(req.body)
         usuario.save((erro)=>{
             if(erro){
